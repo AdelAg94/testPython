@@ -1,0 +1,3 @@
+username = admin
+email = wolfag93@gmail.com
+passowrd = 123456

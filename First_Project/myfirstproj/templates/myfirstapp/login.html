@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "myfirstapp/basic.html" %}
+{% block body_block %}
+    <h1>Login here</h1>
+    <form  method="POST">
+        <h2>Fill these fields to login</h2>
+        {% csrf_token %}
+        {{user_form.as_p}}
+        {% if sent %}
+        {% if authn %}
+        {% else %}
+        <script>
+            alert("Please enter correct username or password")
+        </script>
+        {% endif %}
+        {% endif %}
+    <input type="submit" value="Login">
+    </form>
+{% endblock %}

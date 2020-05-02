@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "myfirstapp/basic.html" %}
+{% load static %}
+{% block body_block %}
+    <h1>This is the power of Django</h1>
+    {% if access_records %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+        </thead>
+    {% for acc in access_records %}
+        <tr>
+            <td>{{acc.name | upper}}</td>
+            <td>{{acc.date}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+<style>
+    td,th{
+        border: 2px solid red;
+
+    }
+</style>
+{% endblock %}

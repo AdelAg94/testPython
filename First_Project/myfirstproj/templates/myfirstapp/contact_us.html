@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'myfirstapp/basic.html' %}
+{% block body_block %}
+    <h1>Please enter the message you want to send</h1>
+    <form method="POST">
+        {{form}}
+        <!-- we can put {{form.as_p}} to make it looks better where every input
+        will typed in new paragraph  -->
+        {% csrf_token %}
+    <input type="submit" value="Send Message">
+    </form>
+    <h2><a href="{% url 'index' %}">Go to Home Page</a></h2>
+    <h2><a href="{% url 'myfirstapp:signup' %}">Go to Signup Page</a></h2>
+    {% endblock %}
